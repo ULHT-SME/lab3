@@ -109,7 +109,7 @@ class _CounterScreenState extends State<CounterScreen> {
 
   void _incrementCounter() {
     // TODO: Use setState to update _counter
-    // Hint: setState(() { _counter++; });
+    // Hint: make use setState(() {  });
   }
 
   void _decrementCounter() {
@@ -298,9 +298,9 @@ void _addTodo() {
   // TODO: Use setState to add the task to _todos list
   // TODO: Clear the TextField after adding
   
-  // Hint: _textController.text.trim()
-  // Hint: _todos.add(taskText)
-  // Hint: _textController.clear()
+  // Hint: textController has a method called trim()
+  // Hint: you can add items to an array using .add(...)
+  // Hint: textController has a method called clear()
 }
 ```
 
@@ -543,7 +543,7 @@ class MyApp extends StatelessWidget {
 - `context.read<T>()` - access provider without listening
 - `context.watch<T>()` - access provider with listening
 
-### Task 5: Optional Challenge - Add Checkbox for Complete Status
+### Task 5: Challenge - Add Checkbox for Complete Status
 
 **Objective:** Extend the Todo app to track completed tasks.
 
@@ -577,19 +577,17 @@ class TodoProvider extends ChangeNotifier {
   List<Todo> get todos => _todos;
 
   void addTodo(String title) {
-    if (title.trim().isEmpty) return;
-    _todos.add(Todo(title: title));
+    ...
     notifyListeners();
   }
 
   void deleteTodo(int index) {
-    _todos.removeAt(index);
+    ...
     notifyListeners();
   }
 
   void toggleComplete(int index) {
-    // TODO: Toggle the isCompleted status
-    // Hint: _todos[index].isCompleted = !_todos[index].isCompleted
+    ...
     notifyListeners();
   }
 
